@@ -1,11 +1,13 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
-@Table
+@Entity
+@Table(name = "users")
 public class User {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "my_entity_seq_gen", sequenceName = "catalog_seq")
     @Id
     private Long id;
 
